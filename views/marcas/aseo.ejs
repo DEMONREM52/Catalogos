@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 
@@ -35,13 +34,16 @@
             max-width: auto;
             color: #000000;
         }
-        a{
+
+        a {
             font-size: large;
             text-decoration: none;
         }
+
         a:hover {
-    text-decoration: none; /* Elimina el subrayado predeterminado */
-}
+            text-decoration: none;
+            /* Elimina el subrayado predeterminado */
+        }
 
         /* Color of the links BEFORE scroll */
         .navbar-scroll .nav-link,
@@ -209,38 +211,65 @@
         }
 
         #carrito {
-    display: none;
-    opacity: 0;
-    transform: scale(0);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    color: #ffffff;
-}
+            display: none;
+            opacity: 0;
+            transform: scale(0);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            color: #ffffff;
+        }
 
-#toggle-carrito {
-    border: none; /* Eliminar bordes */
-    padding: 0; /* Eliminar relleno */
-    background: none; /* Eliminar fondo */
-}
+        #toggle-carrito {
+            border: none;
+            /* Eliminar bordes */
+            padding: 0;
+            /* Eliminar relleno */
+            background: none;
+            /* Eliminar fondo */
+        }
 
-#carrito-icon {
-    width: 60px; /* Aumentar el tamaño de la imagen */
-    height: 60px; /* Aumentar el tamaño de la imagen */
-    transition: transform 0.5s ease; /* Agregar transición para la animación */
-}
+        #carrito-icon {
+            width: 60px;
+            /* Aumentar el tamaño de la imagen */
+            height: 60px;
+            /* Aumentar el tamaño de la imagen */
+            transition: transform 0.5s ease;
+            /* Agregar transición para la animación */
+        }
 
-#carrito-icon:hover {
-    animation: tada 1s infinite; /* Aplicar animación al hacer hover */
-}
+        #carrito-icon:hover {
+            animation: tada 1s infinite;
+            /* Aplicar animación al hacer hover */
+        }
 
-@keyframes tada {
-    0% { transform: scale(1); }
-    10%, 20% { transform: scale(0.9) rotate(-3deg); }
-    30%, 50%, 70%, 90% { transform: scale(1.1) rotate(3deg); }
-    40%, 60%, 80% { transform: scale(1.1) rotate(-3deg); }
-    100% { transform: scale(1) rotate(0); }
-}
+        @keyframes tada {
+            0% {
+                transform: scale(1);
+            }
 
-.boton-eliminar-lista{
+            10%,
+            20% {
+                transform: scale(0.9) rotate(-3deg);
+            }
+
+            30%,
+            50%,
+            70%,
+            90% {
+                transform: scale(1.1) rotate(3deg);
+            }
+
+            40%,
+            60%,
+            80% {
+                transform: scale(1.1) rotate(-3deg);
+            }
+
+            100% {
+                transform: scale(1) rotate(0);
+            }
+        }
+
+        .boton-eliminar-lista {
             color: #000000;
             background-color: #ff0000cc;
             font-size: 15px;
@@ -251,17 +280,17 @@
             box-shadow: 1px 1px 1px #b4ffc463, -1px -1px 1px #b4ffc463;
             border: none;
             transition: all 0.5s ease 0s;
-}
+        }
 
-.boton-eliminar-lista:hover,
-.boton-eliminar-lista:focus{
-    border: 2px solid white;
+        .boton-eliminar-lista:hover,
+        .boton-eliminar-lista:focus {
+            border: 2px solid white;
             background-color: #ff0000;
             color: #000000;
             letter-spacing: 3px;
             box-shadow: none;
             outline: none;
-}
+        }
     </style>
 
 </head>
@@ -285,11 +314,12 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <b><a class="nav-link" style="color: rgb(255, 255, 255); padding-right: 40px;" href="/">Inicio</a></b>
+                        <b><a class="nav-link" style="color: rgb(255, 255, 255); padding-right: 40px;"
+                                href="/">Inicio</a></b>
                     </li>
                     <li class="nav-item">
-                        <b><a class="nav-link" style="color: rgb(255, 255, 255); padding-right: 40px;" href="/registrar-cita"
-                                target="blank">Cotización</a></b>
+                        <b><a class="nav-link" style="color: rgb(255, 255, 255); padding-right: 40px;"
+                                href="/registrar-cita" target="blank">Cotización</a></b>
                     </li>
                     <li class="nav-item">
                         <b><a class="nav-link" style="color: rgb(255, 255, 255); padding-right: 40px;"
@@ -309,28 +339,33 @@
     <div class="container mt-5">
         <h1 style="color: #ffffff; text-align: center;">Aseo</h1>
 
-<!-- Div que representa el carrito -->
-<div>
-    <button id="toggle-carrito" onmouseover="startAnimation()" onmouseout="stopAnimation()" onclick="toggleCarrito()">
-        <box-icon name='cart' id="carrito-icon"></box-icon>
-    </button>
-    <div id="carrito" style="display: none;">
-        <label for="nombre">Por favor dijite su nombre para realizar la compra:</label>
-        <input type="text" id="nombre" required>
-        <ol style="font-size: x-large;" id="lista-carrito"></ol>
-        <p id="total-carrito" style="display: none; font-size: xx-large;">Total a pagar: </p> <!-- Total del carrito -->
-        <button class="btn btn-primary" onclick="comprar()">Comprar</button>
-    </div>
-</div>
+        <!-- Div que representa el carrito -->
+        <div>
+            <button id="toggle-carrito" onmouseover="startAnimation()" onmouseout="stopAnimation()"
+                onclick="toggleCarrito()">
+                <box-icon name='cart' id="carrito-icon"></box-icon>
+            </button>
+            <div id="carrito" style="display: none;">
+                <label for="nombre">Por favor dijite su nombre para realizar la compra:</label>
+                <input type="text" id="nombre" required>
+                <ol style="font-size: x-large;" id="lista-carrito"></ol>
+                <p id="total-carrito" style="display: none; font-size: xx-large;">Total a pagar: </p>
+                <!-- Total del carrito -->
+                <button class="btn btn-primary" onclick="comprar()">Comprar</button>
+            </div>
+        </div>
 
 
 
 
         <div class="row buscador" id="catalogos">
             <div class="col-md-12">
-                <input type="text" id="buscador" class="form-control" style="border-color: #000000; color: #000000;" placeholder="Buscar por nombre...">
+                <input type="text" id="buscador" class="form-control" style="border-color: #000000; color: #000000;"
+                    placeholder="Buscar por nombre...">
             </div>
         </div>
+
+
 
         <div class="row mt-3" id="catalogos">
             <% catalogos.forEach((catalogo, index)=> { %>
@@ -351,24 +386,24 @@
                                 <p class="card-text"
                                     style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; font-size: 40px;">
                                     Precio: $<%= catalogo.precio.toLocaleString('es-CO') %> COP</p>
-                                    <form class="agregar-al-carrito" action="/agregar-al-carrito" method="POST">
-                                        <!-- Campos ocultos para el ID, nombre y precio del producto -->
-                                        <input type="hidden" name="productoId" value="<%= catalogo.id %>">
-                                        <input type="hidden" name="nombreProducto" value="<%= catalogo.nombre %>">
-                                        <input type="hidden" name="precioProducto" value="<%= catalogo.precio %>">
-                                        <!-- Campo de entrada para la cantidad -->
-                                        <label for="cantidad-<%= index %>">Cantidad:</label>
-                                        <input type="number" id="cantidad-<%= index %>" name="cantidad" value="1" min="1">
-                                        <!-- Botón para agregar al carrito -->
-                                        <button class="btn btn-primary" type="submit">Agregar al carrito</button>
-                                    </form>
-                                    
+                                <form class="agregar-al-carrito" action="/agregar-al-carrito" method="POST">
+                                    <!-- Campos ocultos para el ID, nombre y precio del producto -->
+                                    <input type="hidden" name="productoId" value="<%= catalogo.id %>">
+                                    <input type="hidden" name="nombreProducto" value="<%= catalogo.nombre %>">
+                                    <input type="hidden" name="precioProducto" value="<%= catalogo.precio %>">
+                                    <!-- Campo de entrada para la cantidad -->
+                                    <label for="cantidad-<%= index %>">Cantidad:</label>
+                                    <input type="number" id="cantidad-<%= index %>" name="cantidad" value="1" min="1">
+                                    <!-- Botón para agregar al carrito -->
+                                    <button class="btn btn-primary" type="submit">Agregar al carrito</button>
+                                </form>
+
                             </div>
                         </div>
                     </div>
-                <% } %>
-            <% }); %>
-        </div>        
+                    <% } %>
+                        <% }); %>
+        </div>
     </div>
 
     <footer class="p-3 mb-2" style="background-color: rgb(0, 0, 0); color: rgb(255, 255, 255);" class="text-muted">
@@ -466,8 +501,8 @@
                         </div>
                     </div>
                 </div>
-                
-               
+
+
     </footer>
 
 
@@ -506,57 +541,57 @@
         });
     });
 
-// Función para calcular el total del carrito y mostrarlo
-function calcularTotal() {
-    totalCarrito = 0; // Reinicia el total del carrito
+    // Función para calcular el total del carrito y mostrarlo
+    function calcularTotal() {
+        totalCarrito = 0; // Reinicia el total del carrito
 
-    // Recorre todos los elementos del carrito y suma los totales
-    document.querySelectorAll('#lista-carrito li').forEach(item => {
-        const totalProducto = parseFloat(item.querySelector('.total').textContent.replace(/[^\d-]/g, ''));
-        totalCarrito += totalProducto;
-    });
+        // Recorre todos los elementos del carrito y suma los totales
+        document.querySelectorAll('#lista-carrito li').forEach(item => {
+            const totalProducto = parseFloat(item.querySelector('.total').textContent.replace(/[^\d-]/g, ''));
+            totalCarrito += totalProducto;
+        });
 
-    // Formatea el total para mostrarlo completo
-    const totalCarritoElement = document.getElementById('total-carrito');
-    totalCarritoElement.textContent = `Total a pagar: ${totalCarrito.toLocaleString('es-CO', { style: 'currency', currency: 'COP', minimumFractionDigits: 0 })}`;
-    totalCarritoElement.style.display = 'block'; // Muestra el elemento
-}
+        // Formatea el total para mostrarlo completo
+        const totalCarritoElement = document.getElementById('total-carrito');
+        totalCarritoElement.textContent = `Total a pagar: ${totalCarrito.toLocaleString('es-CO', { style: 'currency', currency: 'COP', minimumFractionDigits: 0 })}`;
+        totalCarritoElement.style.display = 'block'; // Muestra el elemento
+    }
 
 
 
 
     // Función para agregar un producto al carrito
-function agregarAlCarrito(productoId, nombreProducto, precioProducto, cantidad) {
-    const totalProducto = precioProducto * cantidad; // Calcular el total por producto
-    totalCarrito += totalProducto; // Actualizar el total del carrito
-    totalGeneral += totalProducto; // Actualizar el total general
-    const itemCarrito = `
+    function agregarAlCarrito(productoId, nombreProducto, precioProducto, cantidad) {
+        const totalProducto = precioProducto * cantidad; // Calcular el total por producto
+        totalCarrito += totalProducto; // Actualizar el total del carrito
+        totalGeneral += totalProducto; // Actualizar el total general
+        const itemCarrito = `
         <li data-producto-id="${productoId}">
             ${nombreProducto} - Precio: <span class="precio">${precioProducto.toLocaleString('es-CO', { style: 'currency', currency: 'COP', minimumFractionDigits: 0 })}</span> - Cantidad: <input type="number" class="cantidad" style="width: 7ch;" value="${cantidad}" min="1" onchange="actualizarCantidad(${productoId}, ${precioProducto})"> - Total: <span class="total">${totalProducto.toLocaleString('es-CO', { style: 'currency', currency: 'COP', minimumFractionDigits: 0 })}</span>
             <button class="boton-eliminar-lista" onclick="eliminarDelCarrito(${productoId}, ${precioProducto}, ${cantidad})">Eliminar</button>
         </li>
     `;
-    const listaCarrito = document.getElementById('lista-carrito');
-    listaCarrito.insertAdjacentHTML('beforeend', itemCarrito);
+        const listaCarrito = document.getElementById('lista-carrito');
+        listaCarrito.insertAdjacentHTML('beforeend', itemCarrito);
 
-    calcularTotal(); // Calcular y mostrar el total del carrito
-    actualizarTotalGeneral(); // Actualizar el total general mostrado
-}
+        calcularTotal(); // Calcular y mostrar el total del carrito
+        actualizarTotalGeneral(); // Actualizar el total general mostrado
+    }
 
-// Función para actualizar la cantidad de un producto en el carrito
-function actualizarCantidad(productoId, precioProducto) {
-    const cantidadElement = document.querySelector(`#lista-carrito [data-producto-id="${productoId}"] .cantidad`);
-    const nuevaCantidad = parseInt(cantidadElement.value);
-    const totalAnterior = parseFloat(cantidadElement.parentElement.querySelector('.total').textContent.replace(/[^\d.-]/g, '')); // Eliminar cualquier caracter que no sea número, punto o signo negativo
-    const nuevoTotal = precioProducto * nuevaCantidad;
-    totalCarrito -= totalAnterior; // Restar el total del producto anterior del carrito
-    totalCarrito += nuevoTotal; // Sumar el nuevo total del producto al carrito
-    totalGeneral -= totalAnterior; // Restar el total general del producto anterior
-    totalGeneral += nuevoTotal; // Sumar el nuevo total del producto al total general
-    cantidadElement.parentElement.querySelector('.total').textContent = nuevoTotal.toLocaleString('es-CO', { style: 'currency', currency: 'COP', minimumFractionDigits: 0 }); // Actualizar el total del producto
-    calcularTotal(); // Calcular y mostrar el total del carrito
-    actualizarTotalGeneral(); // Actualizar el total general mostrado
-}
+    // Función para actualizar la cantidad de un producto en el carrito
+    function actualizarCantidad(productoId, precioProducto) {
+        const cantidadElement = document.querySelector(`#lista-carrito [data-producto-id="${productoId}"] .cantidad`);
+        const nuevaCantidad = parseInt(cantidadElement.value);
+        const totalAnterior = parseFloat(cantidadElement.parentElement.querySelector('.total').textContent.replace(/[^\d.-]/g, '')); // Eliminar cualquier caracter que no sea número, punto o signo negativo
+        const nuevoTotal = precioProducto * nuevaCantidad;
+        totalCarrito -= totalAnterior; // Restar el total del producto anterior del carrito
+        totalCarrito += nuevoTotal; // Sumar el nuevo total del producto al carrito
+        totalGeneral -= totalAnterior; // Restar el total general del producto anterior
+        totalGeneral += nuevoTotal; // Sumar el nuevo total del producto al total general
+        cantidadElement.parentElement.querySelector('.total').textContent = nuevoTotal.toLocaleString('es-CO', { style: 'currency', currency: 'COP', minimumFractionDigits: 0 }); // Actualizar el total del producto
+        calcularTotal(); // Calcular y mostrar el total del carrito
+        actualizarTotalGeneral(); // Actualizar el total general mostrado
+    }
 
 
 
@@ -585,69 +620,62 @@ function actualizarCantidad(productoId, precioProducto) {
 
 
 
-
-
-
-
-
-
-
 <script>
     // Función para mostrar u ocultar el carrito
     function toggleCarrito() {
-    const carrito = document.getElementById('carrito');
-    if (carrito.style.display === 'none') {
-        carrito.style.display = 'block';
-        setTimeout(() => {
-            carrito.style.opacity = '1';
-            carrito.style.transform = 'scale(1)';
-        }, 50); // Espera un breve momento antes de aplicar la transición para dar tiempo a que el cambio de visibilidad ocurra
-    } else {
-        carrito.style.opacity = '0';
-        carrito.style.transform = 'scale(0)';
-        setTimeout(() => {
-            carrito.style.display = 'none';
-        }, 300); // Espera 300 ms (la duración de la transición CSS) antes de ocultar completamente el carrito
-    }
-}
-
-
-
-// Función para enviar un mensaje de compra por WhatsApp
-function comprar() {
-    // Verificar si se ha ingresado un nombre
-    const nombre = document.getElementById('nombre').value;
-    if (!nombre) {
-        alert('Por favor, ingrese su nombre antes de continuar.');
-        return; // Detener la ejecución si no se ha ingresado un nombre
+        const carrito = document.getElementById('carrito');
+        if (carrito.style.display === 'none') {
+            carrito.style.display = 'block';
+            setTimeout(() => {
+                carrito.style.opacity = '1';
+                carrito.style.transform = 'scale(1)';
+            }, 50); // Espera un breve momento antes de aplicar la transición para dar tiempo a que el cambio de visibilidad ocurra
+        } else {
+            carrito.style.opacity = '0';
+            carrito.style.transform = 'scale(0)';
+            setTimeout(() => {
+                carrito.style.display = 'none';
+            }, 300); // Espera 300 ms (la duración de la transición CSS) antes de ocultar completamente el carrito
+        }
     }
 
-    // Número de WhatsApp al que enviar el mensaje
-    const numeroWhatsApp = '3218846041'; // Reemplazar con el número de WhatsApp al que quieras enviar el mensaje
 
-    // Obtener los elementos de la lista del carrito
-    const listaCarrito = document.getElementById('lista-carrito');
-    const itemsCarrito = Array.from(listaCarrito.children);
 
-    // Construir el mensaje con los detalles de la compra
-    let mensaje = `¡Hola ${nombre}!\n Quieres realizar una compra?\n Tu pedido es:\n\n`;
-    itemsCarrito.forEach(item => {
-        const nombreProducto = item.textContent.split(' - ')[0].trim(); // Extraer el nombre del producto del texto
-        const cantidad = item.querySelector('.cantidad').value; // Obtener la cantidad del producto
-        const total = item.querySelector('.total').textContent; // Obtener el total del producto
-        mensaje += `${nombreProducto}\n Cantidad: ${cantidad}\n Total: ${total}\n\n`;
-    });
-    mensaje += `\n ${document.getElementById('total-carrito').textContent}\n Tu pedido esta correcto?\n SI/NO\n`;
+    // Función para enviar un mensaje de compra por WhatsApp
+    function comprar() {
+        // Verificar si se ha ingresado un nombre
+        const nombre = document.getElementById('nombre').value;
+        if (!nombre) {
+            alert('Por favor, ingrese su nombre antes de continuar.');
+            return; // Detener la ejecución si no se ha ingresado un nombre
+        }
 
-    // Codificar el mensaje para que sea compatible con la URL
-    const mensajeCodificado = encodeURIComponent(mensaje);
+        // Número de WhatsApp al que enviar el mensaje
+        const numeroWhatsApp = '3218846041'; // Reemplazar con el número de WhatsApp al que quieras enviar el mensaje
 
-    // Construir la URL de WhatsApp
-    const url = `https://wa.me/${numeroWhatsApp}/?text=${mensajeCodificado}`;
+        // Obtener los elementos de la lista del carrito
+        const listaCarrito = document.getElementById('lista-carrito');
+        const itemsCarrito = Array.from(listaCarrito.children);
 
-    // Abrir la URL en una nueva pestaña
-    window.open(url, '_blank');
-}
+        // Construir el mensaje con los detalles de la compra
+        let mensaje = `¡Hola ${nombre}!\n Quieres realizar una compra?\n Tu pedido es:\n\n`;
+        itemsCarrito.forEach(item => {
+            const nombreProducto = item.textContent.split(' - ')[0].trim(); // Extraer el nombre del producto del texto
+            const cantidad = item.querySelector('.cantidad').value; // Obtener la cantidad del producto
+            const total = item.querySelector('.total').textContent; // Obtener el total del producto
+            mensaje += `${nombreProducto}\n Cantidad: ${cantidad}\n Total: ${total}\n\n`;
+        });
+        mensaje += `\n ${document.getElementById('total-carrito').textContent}\n Tu pedido esta correcto?\n SI/NO\n`;
+
+        // Codificar el mensaje para que sea compatible con la URL
+        const mensajeCodificado = encodeURIComponent(mensaje);
+
+        // Construir la URL de WhatsApp
+        const url = `https://wa.me/${numeroWhatsApp}/?text=${mensajeCodificado}`;
+
+        // Abrir la URL en una nueva pestaña
+        window.open(url, '_blank');
+    }
 
 
 </script>

@@ -3,17 +3,17 @@ const express = require("express");
 const session = require("express-session");
 const passport = require("passport");
 const bodyParser = require("body-parser");
-const mysql = require("mysql");
+const mysql = require("mysql2");
 const path = require("path");
 const bcrypt = require("bcrypt");
 const { render } = require("ejs");
 // Configuración de Express
 const app = express();
 const port = process.env.PORT || 3000;
-const DB_HOST = process.env.DB_HOST || "localhost";
-const DB_USER = process.env.DB_USER || "root";
-const DB_PASSWORD = process.env.DB_PASSWORD || "";
-const DB_NAME = process.env.DB_NAME || "j&a";
+const DB_HOST = process.env.DB_HOST || "jyamayoristas_dbjyamayoristas";
+const DB_USER = process.env.DB_USER || "mysql";
+const DB_PASSWORD = process.env.DB_PASSWORD || "7eab552585ef054fa868";
+const DB_NAME = process.env.DB_NAME || "jyamayoristas";
 const DB_PORT = process.env.DB_PORT || "3306";
 
 app.use(
