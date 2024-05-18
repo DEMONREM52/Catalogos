@@ -9,7 +9,7 @@ const bcrypt = require("bcrypt");
 const { render } = require("ejs");
 // Configuración de Express
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 80;
 const DB_HOST = process.env.DB_HOST || "jyamayoristas_dbjyamayoristas";
 const DB_USER = process.env.DB_USER || "mysql";
 const DB_PASSWORD = process.env.DB_PASSWORD || "7eab552585ef054fa868";
