@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>J&A</title>
-    <link rel="shortcut icon" href="https://i.ibb.co/cYxswKs/carro-deportivo.png" type="image/x-icon">
+    <title>Catalogo - Cacharros</title>
+    <link rel="shortcut icon" href="https://i.ibb.co/NWktBjt/gran-venta.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
@@ -17,113 +18,239 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&display=swap" rel="stylesheet">
-
-</head>
-
-
-
-<style>
-    body {
-        font-family: "EB Garamond", serif;
-        font-optical-sizing: auto;
-        font-weight: 800;
-        font-style: normal;
-        background-color: #000000;
-        background-image: url('https://i.ibb.co/7Sz7sqF/wallpaperbetter-com-7680x4320-3.jpg');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        width: 100%;
-        max-width: auto;
-
-    }
-
-    /* Color of the links BEFORE scroll */
-    .navbar-scroll .nav-link,
-    .navbar-scroll .navbar-toggler-icon,
-    .navbar-scroll .navbar-brand {
-        color: #fff;
-    }
-
-    /* Color of the links AFTER scroll */
-    .navbar-scrolled .nav-link,
-    .navbar-scrolled .navbar-toggler-icon,
-    .navbar-scrolled .navbar-brand {
-        color: #fff;
-    }
-
-    /* Color of the navbar AFTER scroll */
-    .navbar-scroll,
-    .navbar-scrolled {
-        background-color: #cbbcb1;
-    }
-
-    .mask-custom {
-        backdrop-filter: blur(5px);
-        background-color: rgba(255, 255, 255, .15);
-    }
-
-    .navbar-brand {
-        font-size: 1.75rem;
-        letter-spacing: 3px;
-    }
-
-    .navbar-custom {
-        background-color: #b4d5ff93;
-        /* Color de fondo original */
-    }
-
-    #navbar {
-        position: fixed;
-        top: 0;
-        width: 100%;
-        background-color: rgba(53, 53, 53, 0.719);
-        padding: 10px 0;
-        transition: top 0.3s;
-        z-index: 1000;
-    }
-
-    #content {
-        padding-top: 50px;
-        /* Ajusta esto según la altura de tu barra de navegación */
-    }
-
-    .card {
-        background-color: #000000;
-    }
-
-    .container-image {
-        position: relative;
-        margin-top: 40px;
-        width: auto;
-        /* Ajusta el ancho según sea necesario */
-        height: auto;
-        /* Ajusta la altura según sea necesario */
-    }
-
-    .image {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        /* Ajusta la imagen para cubrir todo el contenedor */
-        clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%);
-        /* Forma de montaña invertida */
-    }
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 
+    <style>
+     @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
 
-    .text {
-        position: absolute;
-        top: 20%;
-        left: 22%;
-        transform: translate(-50%, -50%);
-        z-index: 1;
-        /* Coloca el texto encima de la imagen */
-        color: white;
-        font-family: "Rubik Doodle Shadow", system-ui;
-        font-weight: 800;
-        font-style: normal;
-    }
+        html {
+            zoom: 0.8;
+        }
+
+        body {
+            font-family: "Roboto Slab", serif;
+            font-optical-sizing: auto;
+            font-weight: 500;
+            font-style: normal;
+            font-optical-sizing: auto;
+            font-weight: 800;
+            font-style: normal;
+            background: rgb(165,0,254);
+background: linear-gradient(125deg, rgba(165,0,254,1) 0%, rgba(209,0,255,1) 100%, rgba(233,36,85,1) 100%);            background-repeat: no-repeat;
+            width: 100%;
+            max-width: auto;
+            color: #000000;
+        }
+
+        a {
+            font-size: large;
+            text-decoration: none;
+            color: rgb(0, 0, 0);
+        }
+
+        a:hover {
+            text-decoration: none;
+            /* Elimina el subrayado predeterminado */
+        }
+
+        /* Color of the links BEFORE scroll */
+        .navbar-scroll .nav-link,
+        .navbar-scroll .navbar-toggler-icon,
+        .navbar-scroll .navbar-brand {
+            color: #ffffff;
+        }
+
+        /* Color of the links AFTER scroll */
+        .navbar-scrolled .nav-link,
+        .navbar-scrolled .navbar-toggler-icon,
+        .navbar-scrolled .navbar-brand {
+            color: #ffffff;
+        }
+
+        /* Color of the navbar AFTER scroll */
+        .navbar-scroll,
+        .navbar-scrolled {
+            background-color: #ffffff;
+        }
+
+        .mask-custom {
+            backdrop-filter: blur(5px);
+            background-color: rgba(255, 255, 255, .15);
+        }
+
+        .navbar-brand {
+            font-size: 1.75rem;
+            letter-spacing: 3px;
+        }
+
+        .navbar-custom {
+            background-color: #b4d5ff93;
+            /* Color de fondo original */
+        }
+
+        #navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgb(255, 255, 255);
+            padding: 10px 0;
+            transition: top 0.3s;
+            z-index: 1000;
+        }
+
+        #content {
+            padding-top: 50px;
+            /* Ajusta esto según la altura de tu barra de navegación */
+        }
+
+        .card {
+            background-color: #ffffff;
+        }
+
+        .container-image {
+            position: relative;
+            margin-top: 40px;
+            width: auto;
+            /* Ajusta el ancho según sea necesario */
+            height: auto;
+            /* Ajusta la altura según sea necesario */
+        }
+
+        .image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* Ajusta la imagen para cubrir todo el contenedor */
+            clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%);
+            /* Forma de montaña invertida */
+        }
+
+        .text {
+            position: absolute;
+            top: 20%;
+            left: 22%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            /* Coloca el texto encima de la imagen */
+            color: rgb(0, 0, 0);
+            font-family: "Rubik Doodle Shadow", system-ui;
+            font-weight: 800;
+            font-style: normal;
+            /* Color del texto */
+        }
+
+        .buscador {
+            padding: 0 150px 0 150px;
+            margin: 120px 0 120px 0;
+        }
+
+        @media (max-width: 1400px) {
+            .container-image {
+                position: relative;
+                margin-top: 40px;
+                width: auto;
+                /* Ajusta el ancho según sea necesario */
+                height: auto;
+                /* Ajusta la altura según sea necesario */
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .container-image {
+                position: relative;
+                margin-top: 40px;
+                width: auto;
+                /* Ajusta el ancho según sea necesario */
+                height: auto;
+                /* Ajusta la altura según sea necesario */
+            }
+        }
+
+        @media (max-width: 800px) {
+            .container-image {
+                position: relative;
+                margin-top: 40px;
+                width: auto;
+                /* Ajusta el ancho según sea necesario */
+                height: auto;
+                /* Ajusta la altura según sea necesario */
+            }
+
+            .text {
+                /* Tamaño de letra más pequeño */
+                position: absolute;
+                top: 30%;
+                left: 37%;
+                transform: translate(-50%, -50%);
+                z-index: 1;
+                /* Coloca el texto encima de la imagen */
+                color: rgb(0, 0, 0);
+                font-weight: 400;
+                font-style: normal;
+            }
+
+
+            .buscador {
+                padding: 0 50px 0 50px;
+                margin: 120px 0 120px 0
+            }
+        }
+
+        .btn {
+            color: #000000;
+            background-color: #ffffff;
+            font-size: 15px;
+            font-weight: bold;
+            text-transform: uppercase;
+            width: 100%;
+            padding: 12px 15px 11px;
+            border-radius: 20px;
+            box-shadow: 1px 1px 1px #b4ffc463, -1px -1px 1px #b4ffc463;
+            border: none;
+            transition: all 0.5s ease 0s;
+        }
+
+        .btn:hover,
+        .btn:focus {
+            border: 2px solid white;
+            background-color: #b8ffaa;
+            color: #000000;
+            letter-spacing: 3px;
+            box-shadow: none;
+            outline: none;
+        }
+
+        .card {
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: scale(1.03);
+            background-color: #ffffff;
+            border-style: solid 1px;
+            border-color: #000000;
+        }
+
+        .social-link {
+            display: inline-block;
+            font-size: 24px;
+            /* ajusta el tamaño del ícono según sea necesario */
+            transition: transform 0.3s ease;
+        }
+
+        .social-link:hover {
+            transform: scale(1.2);
+            /* escala el tamaño del ícono al 120% */
+        }
+
+        .descripcion {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
 
     @media (max-width: 800px) {
         .text {
@@ -187,11 +314,7 @@
 </style>
 
 <div class="container-image">
-    <img src="https://i.ibb.co/SN6XzvN/wallpaperbetter-com-7680x4320-2.jpg" alt="Imagen" class="image">
-    <div class="text">
-        <h2>QUE TU META DE CARRO NUEVO</h2>
-        <H2>NO SE FRENE.</H2>
-    </div>
+    <img src="https://i.ibb.co/B39j2xL/3337745.jpg" alt="Imagen" class="image">
 </div>
 
 <body id="content">
@@ -199,24 +322,24 @@
     <nav id="navbar" class="navbar navbar-expand-lg navbar-light fixed-top mask-custom shadow-0 navbar-custom">
         <div class="container">
             <a style="padding-left: 20px;" class="navbar-brand" href="#">
-                <img src="https://i.ibb.co/nQ0JprM/logo-Photoroom-png-Photoroom.png" alt="Logo" width="100" height="60">
+                <img src="https://i.ibb.co/NWktBjt/gran-venta.png" alt="Logo" width="70" height="60">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
-                style="border: solid 2px white;">
-                <i class="bi bi-list" style="color: #fff;"></i>
+                style="border: solid 2px rgb(0, 0, 0);">
+                <i class="bi bi-list" style="color: #000000;"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <b><a class="nav-link" style="color: white; padding-right: 40px;" href="/">Inicio</a></b>
+                        <b><a class="nav-link" style="color: rgb(0, 0, 0); padding-right: 40px;" href="/">Inicio</a></b>
                     </li>
-                    <li class="nav-item">
-                        <b><a class="nav-link" style="color: white; padding-right: 40px;" href="/registrar-cita"
+                    <li style="display: none;" class="nav-item">
+                        <b><a class="nav-link" style="color: rgb(0, 0, 0); padding-right: 40px;" href="/registrar-cita"
                                 target="blank">Cotización</a></b>
                     </li>
                     <li class="nav-item">
-                        <b><a class="nav-link" style="color: white; padding-right: 40px;"
+                        <b><a class="nav-link" style="color: rgb(0, 0, 0); padding-right: 40px;"
                                 href="#contactoFooter">Contacto</a></b>
                     </li>
             </div>
@@ -226,12 +349,12 @@
 
 
     <div class="container">
-        <h1 class="text-center display-4" style="margin-top: 120px; color: #fff;">TU CARRO SOÑADO</h1>
+        <h1 class="text-center display-4" style="margin-top: 120px; color: #000000;">NUESTROS CATALOGOS</h1>
     </div>
 
 
 
-    <h1 style="text-align: center; margin-top: 6rem; color: #fff;">VEHÍCULOS NUEVOS</h1>
+    <!-- <h1 style="text-align: center; margin-top: 6rem; color: #fff;">VEHÍCULOS NUEVOS</h1> -->
 
 
     <div class="container mt-5">
@@ -241,7 +364,7 @@
                     <img src="https://img.freepik.com/fotos-premium/sombrero-hd-fondo-pantalla-imagen-fotografica_993236-45.jpg" width="500px"
                         height="200px" class="card-img-top" alt="Gorra">
                     <div class="card-body d-flex flex-column justify-content-center">
-                        <h5 class="card-title text-center" style="color: white;">Gorras</h5>
+                        <h5 class="card-title text-center" style="color: rgb(0, 0, 0);">Gorras</h5>
                         <a href="/gorras" class="btn btn-primary">Ver más</a>
                     </div>
                 </div>
@@ -251,7 +374,7 @@
                     <img src="https://i.pinimg.com/736x/80/e6/be/80e6be57cd883dcdcddb7124d31375c4.jpg"
                         width="500px" height="200px" class="card-img-top" alt="Aseo">
                     <div class="card-body d-flex flex-column justify-content-center">
-                        <h5 class="card-title text-center" style="color: white;">Aseo</h5>
+                        <h5 class="card-title text-center" style="color: rgb(0, 0, 0);">Aseo</h5>
                         <a href="aseo" class="btn btn-primary">Ver más</a>
                     </div>
                 </div>
@@ -261,37 +384,37 @@
                     <img src="https://img.freepik.com/fotos-premium/concepto-cuidado-mascotas-varios-accesorios-herramientas-mascotas-sobre-fondo-rosa-papel-blanco-plano_154515-6898.jpg"
                         width="500px" height="200px" class="card-img-top" alt="Mascota">
                     <div class="card-body d-flex flex-column justify-content-center">
-                        <h5 class="card-title text-center" style="color: white;">Mascotas</h5>
+                        <h5 class="card-title text-center" style="color: rgb(0, 0, 0);">Mascotas</h5>
                         <a href="mascotas" class="btn btn-primary">Ver más</a>
                     </div>
                 </div>
             </div>
             <div class="col-md-4 mb-4">
                 <div class="card">
-                    <img src="https://wallpapercave.com/wp/1DcAB24.jpg" width="500px" height="200px"
+                    <img src="https://i.ibb.co/B39j2xL/3337745.jpg" width="500px" height="200px"
                         class="card-img-top" alt="Cacharros">
                     <div class="card-body d-flex flex-column justify-content-center">
-                        <h5 class="card-title text-center" style="color: white;">Cacharros</h5>
+                        <h5 class="card-title text-center" style="color: rgb(0, 0, 0);">Cacharros</h5>
                         <a href="Cacharros" class="btn btn-primary">Ver más</a>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 mb-4">
+            <div style="display: none;" class="col-md-4 mb-4">
                 <div class="card">
                     <img src="https://soymotor.com/sites/default/files/styles/article_full/public/renault-logo-soymotor.jpg.webp?itok=TR25WiOA"
                         width="500px" height="200px" class="card-img-top" alt="Renault">
                     <div class="card-body d-flex flex-column justify-content-center">
-                        <h5 class="card-title text-center" style="color: white;">Renault</h5>
+                        <h5 class="card-title text-center" style="color: rgb(0, 0, 0);">Renault</h5>
                         <a href="renault-nuevo" class="btn btn-primary">Ver más</a>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 mb-4">
+            <div style="display: none;" class="col-md-4 mb-4">
                 <div class="card">
                     <img src="https://i.pinimg.com/736x/56/ea/bb/56eabbde2ba5737197d95b1d51b4ad10.jpg" width="500px"
                         height="200px" class="card-img-top" alt="Nissan">
                     <div class="card-body d-flex flex-column justify-content-center">
-                        <h5 class="card-title text-center" style="color: white;">Nissan</h5>
+                        <h5 class="card-title text-center" style="color: rgb(0, 0, 0);">Nissan</h5>
                         <a href="nissan-nuevo" class="btn btn-primary">Ver más</a>
                     </div>
                 </div>
@@ -376,96 +499,117 @@
 
 
 
-    <footer class="p-3 mb-2" style="background-color: rgba(53, 53, 53, 0.719); color: white;" class="text-muted">
-        <section class="">
-            <div class="container text-center text-md-start mt-5">
-                <!-- Grid row -->
-                <div class="row mt-3">
-                    <!-- Grid column -->
-                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-                        <!-- Content -->
-                        <h6 class="text-uppercase fw-bold mb-4">
-                            <i class="fas fa-gem "></i>NUESTROS CATALOGOS
-                        </h6>
-                        <p>
-                            <a href="/gorras" class="text-reset">Gorras</a>
-                        </p>
-                        <p>
-                            <a href="/bmw-nuevo" class="text-reset">BMW</a>
-                        </p>
-                        <p>
-                            <a href="/mercedez-benz-nuevo" class="text-reset">Mercedez Benz</a>
-                        </p>
-                        <p>
-                            <a href="/Cacharros" class="text-reset">Cacharros</a>
-                        </p>
-                        <p>
-                            <a href="/renault-nuevo" class="text-reset">Renault</a>
-                        </p>
-                        <p>
-                            <a href="/nissan-nuevo" class="text-reset">Nissan</a>
-                        </p>
-                        <p>
-                            <a href="#catalogosUsadosCertificados" class="text-reset">Usados certificados</a>
-                        </p>
+ <footer class="p-3 mb-2" style="background: rgb(0, 0, 0); color: rgb(255, 255, 255);" class="text-muted">
+    <section class="">
+        <div class="container text-center text-md-start mt-5">
+            <!-- Grid row -->
+            <div class="row mt-3">
+                <!-- Grid column -->
+                <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                    <!-- Content -->
+                    <h6 class="text-uppercase fw-bold mb-4">
+                        <i class="fas fa-gem "></i>NUESTROS CATALOGOS
+                    </h6>
+                    <p>
+                        <a style="display: none;" href="/gorras" class="text-reset">Gorras</a>
+                    </p>
+                    <p>
+                        <a href="/cacharros" class="text-reset">Cacharros</a>
+                    </p>
+                    <p>
+                        <a style="display: none;" href="/mascotas" class="text-reset">Mascotas</a>
+                    </p>
+                    <p>
+                        <a style="display: none;" href="/chevrolet-nuevo" class="text-reset">Chevrolet</a>
+                    </p>
+                    <p>
+                        <a style="display: none;" href="/renault-nuevo" class="text-reset">Renault</a>
+                    </p>
+                    <p>
+                        <a style="display: none;" href="/nissan-nuevo" class="text-reset">Nissan</a>
+                    </p>
+                    <p>
+                        <a style="display: none;" href="#restaurantesUsadosCertificados" class="text-reset">Usados
+                            certificados</a>
+                    </p>
 
 
-                    </div>
-                    <!-- Grid column -->
+                </div>
+                <!-- Grid column -->
 
-                    <!-- Grid column -->
-                    <div class="col-md-2 col-lg-2 col-xl-3 mx-auto mb-4">
-                        <!-- Links -->
-                        <h6 class="text-uppercase fw-bold mb-4">
-                            CENTRO DE AYUDA
-                        </h6>
-                        <p>
-                            <a id="contactoFooter" href="" class="text-reset">Contactanos</a>
-                        </p>
-                        <p>
-                            <a href="https://publuu.com/flip-book/448547/1011621" target="blank"
-                                class="text-reset">Politicas y privacidad</a>
-                        </p>
+                <!-- Grid column -->
+                <div class="col-md-2 col-lg-2 col-xl-3 mx-auto mb-4">
+                    <!-- Links -->
+                    <h6 class="text-uppercase fw-bold mb-4">
+                        CENTRO DE AYUDA
+                    </h6>
+                    <p>
+                        <a id="contactoFooter"
+                            href="https://wa.me/573218846041?text=Hola,%20estoy%20interesado%20en%20contactarte"
+                            class="text-reset">Contactanos</a>
+                    </p>
+                    <p>
+                        <a href="../../public/politicas_de_privacidad.pdf" download="politicas_de_privacidad.pdf"
+                            class="text-reset">Políticas de privacidad</a>
+                    </p>
 
-                    </div>
-
-                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-                        <!-- Links -->
-                        <h6 class="text-uppercase fw-bold mb-4">¿Trabajamos juntos?</h6>
-                        <p><i class="bi bi-house-door-fill"></i> Medellin, Colombia </p>
-                        <p>
-                            <i class="bi bi-envelope-fill"></i>
-                            Tucarrosonado8@gmail.com
-                        </p>
-                        <p><i class="bi bi-telephone-fill"></i> + 57 123 456 7808</p>
-                    </div>
-
-                    <section class="d-flex justify-content-center col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-
-                        <div>
-                            <a href="https://web.facebook.com/" target="blank" class="me-4 text-reset social-link">
-                                <i class="bi bi-facebook" style="color: #0066ff;"></i>
-                            </a>
-
-                            <a href="https://twitter.com/?lang=es" target="blank" class="me-4 text-reset social-link">
-                                <i class="bi bi-twitter-x" style="color: #000000;"></i>
-                            </a>
-
-                            <a href="https://www.instagram.com/" target="blank" class="me-4 text-reset social-link">
-                                <i class="bi bi-instagram" style="color: #9900ffd3;"></i>
-                            </a>
-                            <a href="https://wa.me/3133146671?text=Hola%20,%20¿cómo%20estás?%20Estoy%20interesado%20en%20tu%20catalogo%20de%20catalogos%3F"
-                                target="blank" class="me-4 text-reset social-link">
-                                <i class="bi bi-whatsapp" style="color: #00ff00;"></i>
-                            </a>
-
-                        </div>
-                        <!-- Right -->
-                    </section>
-                    <!-- Grid row -->
                 </div>
 
-    </footer>
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                    <!-- Links -->
+                    <h6 class="text-uppercase fw-bold mb-4">¿Trabajamos juntos?</h6>
+                    <p><i class="bi bi-house-door-fill"></i> Medellin, Colombia </p>
+                    <p>
+                        <a href="mailto:atencionalcliente@jgustos.com">
+                            <i class="bi bi-envelope-fill">atencionalcliente@jgustos.com</i>
+                        </a>
+                    </p>
+                    <p>
+                        <a class="whatsapp-link"
+                            href="https://wa.me/573218846041?text=Hola,%20estoy%20interesado%20en%20contactarte">
+                            <i class="bi bi-telephone-fill"></i> +57 3218846041
+                        </a>
+                    </p>
+                </div>
+
+                <section class="d-flex justify-content-center col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+
+                    <div>
+                        <a href="https://web.facebook.com/" target="blank" class="me-4 text-reset social-link">
+                            <i class="bi bi-facebook" style="color: #0066ff;"></i>
+                        </a>
+
+                        <a href="https://twitter.com/?lang=es" target="blank" class="me-4 text-reset social-link">
+                            <i class="bi bi-twitter-x" style="color: #ffffff;"></i>
+                        </a>
+
+                        <a href="" target="blank" class="me-4 text-reset social-link">
+                            <i class="bi bi-instagram" style="color: #9900ffd3;"></i>
+                        </a>
+                        <a href="https://wa.me/573218846041?text=Hola,%20estoy%20interesado%20en%20contactarte"
+                            target="_blank" class="me-4 text-reset social-link">
+                            <i class="bi bi-whatsapp" style="color: #00ff00;"></i>
+                        </a>
+
+                    </div>
+                    <!-- Right -->
+                </section>
+                <!-- Grid row -->
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 mb-4 mx-auto text-center">
+                        <p>&copy; <%= new Date().getFullYear() %> Jyamayoristas... Todos los derechos reservados...</p>
+                        <p>
+                            <a href="/politicas" class="text-reset" target="_blank">Política de privacidad | Términos y condiciones</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+</footer>
+
 
 
 </body>

@@ -9,12 +9,27 @@ const bcrypt = require("bcrypt");
 const { render } = require("ejs");
 // Configuración de Express
 const app = express();
-const port = process.env.PORT || 80;
-const DB_HOST = process.env.DB_HOST || "jyamayoristas_dbjyamayoristas";
-const DB_USER = process.env.DB_USER || "mysql";
-const DB_PASSWORD = process.env.DB_PASSWORD || "7eab552585ef054fa868";
-const DB_NAME = process.env.DB_NAME || "jyamayoristas";
+
+
+
+
+const port = process.env.PORT || 3000;
+const DB_HOST = process.env.DB_HOST || "localhost";
+const DB_USER = process.env.DB_USER || "root";
+const DB_PASSWORD = process.env.DB_PASSWORD || "";
+const DB_NAME = process.env.DB_NAME || "jyamayorista";
 const DB_PORT = process.env.DB_PORT || "3306";
+
+
+
+// const port = process.env.PORT || 80;
+// const DB_HOST = process.env.DB_HOST || "jyamayoristas_dbjyamayoristas";
+// const DB_USER = process.env.DB_USER || "mysql";
+// const DB_PASSWORD = process.env.DB_PASSWORD || "7eab552585ef054fa868";
+// const DB_NAME = process.env.DB_NAME || "jyamayoristas";
+// const DB_PORT = process.env.DB_PORT || "3306";
+
+
 
 app.use(
   session({
@@ -787,7 +802,7 @@ app.get("/bmw-usado", (req, res) => {
 });
 
 //Ruta para 'Cacharros-nuevo' en Express
-app.get("/Cacharros", (req, res) => {
+app.get("/cacharros", (req, res) => {
   // Obtener los vehículos de Toyota con la certificación "nuevo"
   obtenercatalogosPorMarcaYCertificacion(
     "Cacharros",
