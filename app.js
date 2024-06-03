@@ -786,12 +786,12 @@ app.get("/bmw-usado", (req, res) => {
   });
 });
 
-//Ruta para 'chevrolet-nuevo' en Express
-app.get("/chevrolet-nuevo", (req, res) => {
+//Ruta para 'Cacharros-nuevo' en Express
+app.get("/Cacharros", (req, res) => {
   // Obtener los vehículos de Toyota con la certificación "nuevo"
   obtenercatalogosPorMarcaYCertificacion(
-    "Chevrolet",
-    "nuevo",
+    "Cacharros",
+    "siHay",
     (err, catalogos) => {
       if (err) {
         // Manejar el error si ocurre
@@ -799,17 +799,17 @@ app.get("/chevrolet-nuevo", (req, res) => {
         res.status(500).send("Error interno del servidor");
       } else {
         // Renderizar la vista 'gorras' y pasar los vehículos como datos
-        res.render("marcas/chevrolet-nuevo", { catalogos });
+        res.render("marcas/Cacharros", { catalogos });
       }
     }
   );
 });
 
-//Ruta para 'chevrolet-usado' en Express
-app.get("/chevrolet-usado", (req, res) => {
+//Ruta para 'Cacharros-usado' en Express
+app.get("/Cacharros-usado", (req, res) => {
   // Obtener los vehículos de Toyota con la certificación "nuevo"
   obtenercatalogosPorMarcaYCertificacion(
-    "Chevrolet",
+    "Cacharros",
     "usado",
     (err, catalogos) => {
       if (err) {
