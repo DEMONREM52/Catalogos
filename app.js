@@ -799,7 +799,7 @@ app.get("/Cacharros", (req, res) => {
         res.status(500).send("Error interno del servidor");
       } else {
         // Renderizar la vista 'gorras' y pasar los vehículos como datos
-        res.render("marcas/Cacharros", { catalogos });
+        res.render("marcas/cacharros", { catalogos });
       }
     }
   );
