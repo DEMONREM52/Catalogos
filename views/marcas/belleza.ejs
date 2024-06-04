@@ -1,12 +1,11 @@
-
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catálogo - Aseo</title>
-    <link rel="shortcut icon" href="https://i.ibb.co/x3XZXDQ/gran-venta-2.png" type="image/x-icon">
+    <title>Catálogo - Belleza</title>
+    <link rel="shortcut icon" href="https://i.ibb.co/ws3gyBk/gran-venta-5.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
@@ -38,8 +37,8 @@
             font-optical-sizing: auto;
             font-weight: 800;
             font-style: normal;
-            background: #00bf97;
-background: linear-gradient(125deg, #00bf97 0%, #00bf97 100%, #00bf97 100%);            background-repeat: no-repeat;
+            background: rgba(255, 0, 109, 1);
+background: linear-gradient(125deg, rgba(255, 0, 109, 1) 0%, rgba(255, 0, 109, 1) 90%, rgba(233,36,85,1) 100%);            background-repeat: no-repeat;
             width: 100%;
             max-width: auto;
             color: #000000;
@@ -343,13 +342,13 @@ background: linear-gradient(125deg, #00bf97 0%, #00bf97 100%, #00bf97 100%);    
 <body id="content">
 
     <div class="container-image">
-        <img src="https://i.ibb.co/XyWLDzc/pixelcut-export.jpg" alt="Imagen" class="image">
+        <img src="https://i.ibb.co/c3dvJnk/belleza.png" alt="Imagen" class="image">
     </div>
 
     <nav id="navbar" class="navbar navbar-expand-lg navbar-light fixed-top mask-custom shadow-0 navbar-custom">
         <div class="container">
             <a style="padding-left: 20px;" class="navbar-brand" href="#">
-                <img src="https://i.ibb.co/x3XZXDQ/gran-venta-2.png" alt="Logo" width="70" height="70">
+                <img src="https://i.ibb.co/ws3gyBk/gran-venta-5.png" alt="Logo" width="70" height="70">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
@@ -359,11 +358,12 @@ background: linear-gradient(125deg, #00bf97 0%, #00bf97 100%, #00bf97 100%);    
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <b><a class="nav-link" style="color: rgb(0, 0, 0); padding-right: 40px;" href="/">Inicio</a></b>
+                        <b><a class="nav-link" style="color: rgb(0, 0, 0); padding-right: 40px;"
+                                href="/">Inicio</a></b>
                     </li>
-                    <li class="nav-item">
-                        <b><a class="nav-link" style="color: rgb(0, 0, 0); padding-right: 40px;" href="/registrar-cita"
-                                target="blank">Cotización</a></b>
+                    <li style="display: none;" class="nav-item">
+                        <b><a class="nav-link" style="color: rgb(0, 0, 0); padding-right: 40px;"
+                                href="/registrar-cita" target="blank">Cotización</a></b>
                     </li>
                     <li class="nav-item">
                         <b><a class="nav-link" style="color: rgb(0, 0, 0); padding-right: 40px;"
@@ -381,55 +381,62 @@ background: linear-gradient(125deg, #00bf97 0%, #00bf97 100%, #00bf97 100%);    
 
 
     <div class="container mt-5">
-        <h1 style="color: #ffffff; text-align: center;">Aseo</h1>
+        <h1 style="color: #000000; text-align: center;">Belleza</h1>
 
-<!-- Div que representa el carrito -->
-<div>
-    <button id="toggle-carrito" onmouseover="startAnimation()" onmouseout="stopAnimation()"
-        onclick="toggleCarrito()">
-        <box-icon name='cart' id="carrito-icon"></box-icon>
-    </button>
-    <div id="carrito" style="display: none;">
-        <label for="nombre">Por favor digite su nombre para realizar la compra:</label>
-        <input type="text" id="nombre" required>
-
-        <!-- Radiobuttons -->
+        <!-- Div que representa el carrito -->
         <div>
-            <label for="tarifa">Tarifa de envio:</label>
-        </div>
-        
-        <div>
-            <input type="radio" id="opcion1" name="opcion" value="10000">
-            <label for="opcion1">CHARCO $10.000 COP</label><br>
-            <input type="radio" id="opcion2" name="opcion" value="5000">
-            <label for="opcion2">DENTRO DEL MUNICIPIO $5.000 COP</label><br>
-            <input type="radio" id="opcion3" name="opcion" value="20000">
-            <label for="opcion3">FUERA DEL MUNICIPIO $20.000 COP</label><br>
-        </div>
+            <button id="toggle-carrito" onmouseover="startAnimation()" onmouseout="stopAnimation()"
+                onclick="toggleCarrito()">
+                <box-icon name='cart' id="carrito-icon"></box-icon>
+            </button>
+            <div id="carrito" style="display: none;">
+                <label for="nombre">Por favor digite su nombre para realizar la compra:</label>
+                <input type="text" id="nombre" required>
 
-        <!-- Textarea para la dirección -->
-        <label for="direccion">Detalles de la dirección: (SEA LO MAS ESPECÍFICO POSIBLE)</label><br>
-        <textarea id="direccion" rows="4" cols="50"></textarea><br>
+                <!-- Radiobuttons -->
+                <div>
+                    <label for="tarifa">Tarifa de envio:</label>
+                </div>
+                
+                <div>
+                    <input type="radio" id="opcion1" name="opcion" value="10000">
+                    <label for="opcion1">CHARCO $10.000 COP</label><br>
+                    <input type="radio" id="opcion2" name="opcion" value="5000">
+                    <label for="opcion2">DENTRO DEL MUNICIPIO $5.000 COP</label><br>
+                    <input type="radio" id="opcion3" name="opcion" value="20000">
+                    <label for="opcion3">FUERA DEL MUNICIPIO $20.000 COP</label><br>
+                </div>
 
-        <ol style="font-size: x-large;" id="lista-carrito"></ol>
-        <!-- Total a pagar -->
-        <p id="total-carrito" style="display: none; font-size: xx-large;">Total a pagar: </p>
+                <!-- Textarea para la dirección -->
+                <label for="direccion">Detalles de la dirección: (SEA LO MAS ESPECÍFICO POSIBLE)</label><br>
+                <textarea id="direccion" rows="4" cols="50"></textarea><br>
 
-        <!-- Botón para comprar -->
-        <button class="btn btn-primary" onclick="comprar()">Comprar</button>
-    </div>
-</div>
+                <ol style="font-size: x-large;" id="lista-carrito"></ol>
+                <!-- Total a pagar -->
+                <p id="total-carrito" style="display: none; font-size: xx-large;">Total a pagar: </p>
 
-
-        <div class="row buscador" id="catalogos">
-            <div class="col-md-12">
-                <input type="text" id="buscador" class="form-control" style="border-color: #000000; color: #000000;" placeholder="Buscar por nombre...">
+                <!-- Botón para comprar -->
+                <button class="btn btn-primary" onclick="comprar()">Comprar</button>
             </div>
         </div>
 
-        <div class="row mt-3" id="catalogos">
+
+
+
+
+
+        <div class="row buscador" id="restaurantes">
+            <div class="col-md-12">
+                <input type="text" id="buscador" class="form-control" style="border-color: #000000; color: #000000;"
+                    placeholder="Buscar por nombre...">
+            </div>
+        </div>
+
+
+
+        <div class="row mt-3" id="restaurantes">
             <% catalogos.forEach((catalogo, index)=> { %>
-                <% if (catalogo.marca==='Aseo' && catalogo.certificacion==='siHay' ) { %>
+                <% if (catalogo.marca==='Belleza' && catalogo.certificacion==='siHay' ) { %>
                     <div class="col-md-4 mb-4 contenedor-autos" data-nombre="<%= catalogo.nombre %>">
                         <div class="card">
                             <img src="<%= catalogo.imagen %>" class="card-img-top" alt="<%= catalogo.marca %>">
@@ -440,31 +447,40 @@ background: linear-gradient(125deg, #00bf97 0%, #00bf97 100%, #00bf97 100%);    
                                 <h3 class="card-title">
                                     <%= catalogo.nombre %>
                                 </h3>
-                                <p class="card-text descripcion">
-                                    <%= catalogo.descripcion %>
-                                </p>
+                                <a style="display: flex; align-items: center; margin-left: 88%; width: 50px;" href="#"
+                                    class="btn btn-primary ver-detalles" data-index="<%= index %>"><box-icon
+                                        name='chevron-down' type='solid' animation='tada'></box-icon></a>
+                                <a href="#" class="btn btn-secondary mostrar-menos"
+                                    style="display: none; align-items: center; margin-left: 88%; width: 50px;"><box-icon
+                                        name='chevron-down' type='solid' animation='tada' rotate='180'></box-icon></a>
+                                <b>
+                                    <p class="card-text descripcion">
+                                        <%= catalogo.descripcion %>
+                                    </p>
+                                </b>
                                 <p class="card-text"
-                                    style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; font-size: 40px;">
+                                    style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; font-size: 30px;">
                                     Precio: $<%= catalogo.precio.toLocaleString('es-CO') %> COP</p>
-                                    <form class="agregar-al-carrito" action="/agregar-al-carrito" method="POST">
-                                        <!-- Campos ocultos para el ID, nombre y precio del producto -->
-                                        <input type="hidden" name="productoId" value="<%= catalogo.id %>">
-                                        <input type="hidden" name="nombreProducto" value="<%= catalogo.nombre %>">
-                                        <input type="hidden" name="precioProducto" value="<%= catalogo.precio %>">
-                                        <!-- Campo de entrada para la cantidad -->
-                                        <label for="cantidad-<%= index %>">Cantidad:</label>
-                                        <input type="number" id="cantidad-<%= index %>" name="cantidad" value="1" min="1">
-                                        <!-- Botón para agregar al carrito -->
-                                        <button class="btn btn-primary" type="submit">Agregar al carrito</button>
-                                    </form>
-                                    
+                                <form class="agregar-al-carrito" action="/agregar-al-carrito" method="POST">
+                                    <!-- Campos ocultos para el ID, nombre y precio del producto -->
+                                    <input type="hidden" name="productoId" value="<%= catalogo.id %>">
+                                    <input type="hidden" name="nombreProducto" value="<%= catalogo.nombre %>">
+                                    <input type="hidden" name="precioProducto" value="<%= catalogo.precio %>">
+                                    <!-- Campo de entrada para la cantidad -->
+                                    <label for="cantidad-<%= index %>">Cantidad:</label>
+                                    <input type="number" id="cantidad-<%= index %>" name="cantidad" value="1" min="1">
+                                    <!-- Botón para agregar al carrito -->
+                                    <button class="btn btn-primary" type="submit">Agregar al carrito</button>
+                                </form>
                             </div>
                         </div>
                     </div>
-                <% } %>
-            <% }); %>
-        </div>        
+                    <% } %>
+                        <% }); %>
+        </div>
     </div>
+
+    <!-- ESTE ES EL FOOTER -->
 
     <footer class="p-3 mb-2" style="background: rgb(0, 0, 0); color: rgb(255, 255, 255);" class="text-muted">
         <section class="">

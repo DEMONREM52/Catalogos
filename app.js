@@ -752,25 +752,6 @@ app.get("/gorras", (req, res) => {
   );
 });
 
-//Ruta para 'toyota-usado' en Express
-app.get("/toyota-usado", (req, res) => {
-  // Obtener los vehículos de Toyota con la certificación "usado"
-  obtenercatalogosPorMarcaYCertificacion(
-    "Toyota",
-    "usado",
-    (err, catalogos) => {
-      if (err) {
-        // Manejar el error si ocurre
-        console.error("Error al obtener vehículos:", err);
-        res.status(500).send("Error interno del servidor");
-      } else {
-        // Renderizar la vista 'toyota-usado' y pasar los vehículos como datos
-        res.render("marcas/toyota-usado", { catalogos });
-      }
-    }
-  );
-});
-
 //Ruta para 'aseo' en Express
 app.get("/aseo", (req, res) => {
   // Obtener los vehículos de Toyota con la certificación "nuevo"
@@ -786,20 +767,6 @@ app.get("/aseo", (req, res) => {
   });
 });
 
-//Ruta para 'bmw-usado' en Express
-app.get("/bmw-usado", (req, res) => {
-  // Obtener los vehículos de Toyota con la certificación "nuevo"
-  obtenercatalogosPorMarcaYCertificacion("BMW", "usado", (err, catalogos) => {
-    if (err) {
-      // Manejar el error si ocurre
-      console.error("Error al obtener vehículos:", err);
-      res.status(500).send("Error interno del servidor");
-    } else {
-      // Renderizar la vista 'gorras' y pasar los vehículos como datos
-      res.render("marcas/bmw-usado", { catalogos });
-    }
-  });
-});
 
 //Ruta para 'Cacharros-nuevo' en Express
 app.get("/cacharros", (req, res) => {
@@ -815,25 +782,6 @@ app.get("/cacharros", (req, res) => {
       } else {
         // Renderizar la vista 'gorras' y pasar los vehículos como datos
         res.render("marcas/cacharros", { catalogos });
-      }
-    }
-  );
-});
-
-//Ruta para 'Cacharros-usado' en Express
-app.get("/Cacharros-usado", (req, res) => {
-  // Obtener los vehículos de Toyota con la certificación "nuevo"
-  obtenercatalogosPorMarcaYCertificacion(
-    "Cacharros",
-    "usado",
-    (err, catalogos) => {
-      if (err) {
-        // Manejar el error si ocurre
-        console.error("Error al obtener vehículos:", err);
-        res.status(500).send("Error interno del servidor");
-      } else {
-        // Renderizar la vista 'gorras' y pasar los vehículos como datos
-        res.render("marcas/chevrolet-usado", { catalogos });
       }
     }
   );
@@ -896,62 +844,26 @@ app.get("/nissan-nuevo", (req, res) => {
   );
 });
 
-//Ruta para 'nissan-usado' en Express
-app.get("/nissan-usado", (req, res) => {
-  // Obtener los vehículos de Toyota con la certificación "nuevo"
-  obtenercatalogosPorMarcaYCertificacion(
-    "Nissan",
-    "usado",
-    (err, catalogos) => {
-      if (err) {
-        // Manejar el error si ocurre
-        console.error("Error al obtener vehículos:", err);
-        res.status(500).send("Error interno del servidor");
-      } else {
-        // Renderizar la vista 'gorras' y pasar los vehículos como datos
-        res.render("marcas/nissan-usado", { catalogos });
-      }
-    }
-  );
-});
 
 //Ruta para 'renault-nuevo' en Express
-app.get("/renault-nuevo", (req, res) => {
+app.get("/belleza", (req, res) => {
   // Obtener los vehículos de Toyota con la certificación "nuevo"
   obtenercatalogosPorMarcaYCertificacion(
-    "Renault",
-    "nuevo",
+    "Belleza",
+    "siHay",
     (err, catalogos) => {
       if (err) {
         // Manejar el error si ocurre
-        console.error("Error al obtener vehículos:", err);
+        console.error("Error al obtener catalogo de belleza:", err);
         res.status(500).send("Error interno del servidor");
       } else {
         // Renderizar la vista 'gorras' y pasar los vehículos como datos
-        res.render("marcas/renault-nuevo", { catalogos });
+        res.render("marcas/belleza", { catalogos });
       }
     }
   );
 });
 
-//Ruta para 'renault-usado' en Express
-app.get("/renault-usado", (req, res) => {
-  // Obtener los vehículos de Toyota con la certificación "nuevo"
-  obtenercatalogosPorMarcaYCertificacion(
-    "Renault",
-    "usado",
-    (err, catalogos) => {
-      if (err) {
-        // Manejar el error si ocurre
-        console.error("Error al obtener vehículos:", err);
-        res.status(500).send("Error interno del servidor");
-      } else {
-        // Renderizar la vista 'gorras' y pasar los vehículos como datos
-        res.render("marcas/renault-usado", { catalogos });
-      }
-    }
-  );
-});
 
 // Escuchar en el puerto
 app.listen(port, () => {
