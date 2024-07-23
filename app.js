@@ -388,6 +388,8 @@ app.post("/registro", async (req, res) => {
   }
 });
 
+
+
 app.get("/catalogo", (req, res) => {
   // Verificar si el usuario ha iniciado sesión
   if (req.session.usuario) {
