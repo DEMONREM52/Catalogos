@@ -309,93 +309,82 @@ app.post("/registro", async (req, res) => {
     email,
     contraseña,
     rol,
-    passwordAdmin, // Clave del administrador
-    passwordSuperAdmin, // Nueva clave para el SuperAdmin
+    passwordAdmin,
+    passwordSuperAdmin,
     montoVendedorInput,
     aceptarTerminos,
   } = req.body;
 
-  if (rol === "admin") {
-    const contraseñaAdminCorrecta = "z;Jpe[W*3Mqsc-TEAT6C"; // Contraseña del administrador correcta
-    if (passwordAdmin !== contraseñaAdminCorrecta) {
-      return res.status(400).send(
-        // Contraseña de administrador incorrecta
-        `<script>
-        alert("Contraseña de administrador incorrecta");
-        window.location.href = "/registro"; // Redirige al usuario de nuevo a la página de registro
-      </script>
-    `
-      );
-    }
-  } else if (rol === "superadmin") {
-    const contraseñaSuperAdminCorrecta = "BSdEGPAjxJwhv3onUX:a"; // Contraseña del SuperAdmin correcta
-    if (passwordSuperAdmin !== contraseñaSuperAdminCorrecta) {
-      return res.status(400).send(
-        // Contraseña de SuperAdmin incorrecta
-        `<script>
-        alert("Contraseña de SuperAdmin incorrecta");
-        window.location.href = "/registro"; // Redirige al usuario de nuevo a la página de registro
-      </script>
-    `
-      );
-    }
-  } else if (rol === "vendedor") {
-    const costoVendedor = "30000";
-    if (!montoVendedorInput || montoVendedorInput < costoVendedor) {
-      return res.status(400).send(
-        //
-        `<script>
-          alert("El monto ingresado debe ser mayor a ${costoVendedor}");
-          window.location.href = "/registro"; // Redirige al usuario de nuevo a la página de registro
-        </script> ${costoVendedor}`
-      );
-    }
-  } else if (!aceptarTerminos) {
-    return res.status(400).send(`
-      <script>
-        alert("Debe aceptar los términos y condiciones para registrarse");
-        window.location.href = "/registro"; // Redirige al usuario de nuevo a la página de registro
-      </script>
-    `);
-  }
   try {
-    // Hash de la contraseña
+    if (rol === "admin") {
+      const contraseñaAdminCorrecta = "z;Jpe[W*3Mqsc-TEAT6C";
+      if (passwordAdmin !== contraseñaAdminCorrecta) {
+        return res.status(400).send(
+          `<script>
+            alert("Contraseña de administrador incorrecta");
+            window.location.href = "/registro";
+          </script>`
+        );
+      }
+    } else if (rol === "superadmin") {
+      const contraseñaSuperAdminCorrecta = "BSdEGPAjxJwhv3onUX:a";
+      if (passwordSuperAdmin !== contraseñaSuperAdminCorrecta) {
+        return res.status(400).send(
+          `<script>
+            alert("Contraseña de SuperAdmin incorrecta");
+            window.location.href = "/registro";
+          </script>`
+        );
+      }
+    } else if (rol === "vendedor") {
+      const costoVendedor = 30000;
+      if (!montoVendedorInput || montoVendedorInput < costoVendedor) {
+        return res.status(400).send(
+          `<script>
+            alert("El monto ingresado debe ser mayor a ${costoVendedor}");
+            window.location.href = "/registro";
+          </script>`
+        );
+      }
+    }
+
+    if (!aceptarTerminos) {
+      return res.status(400).send(
+        `<script>
+          alert("Debe aceptar los términos y condiciones para registrarse");
+          window.location.href = "/registro";
+        </script>`
+      );
+    }
+
     const hashedPassword = await bcrypt.hash(contraseña, 10);
 
-    // Verificar si el correo electrónico ya está en uso
-    db.query(
-      "SELECT * FROM usuarios WHERE email = ? OR nombre = ?",
-      [email, nombre],
-      (error, resultados) => {
-        if (error) {
-          res.status(500).send("Error interno del servidor");
-        } else if (resultados.length > 0) {
-          res.status(400).send(`
-  <script>
-    alert("El correo electrónico o el nombre de usuario ya están en uso");
-    window.location.href = "/registro"; // Redirige al usuario de nuevo a la página de registro
-  </script>
-  `);
-        } else {
-          // Guardar el nuevo usuario en la base de datos con la contraseña hasheada
-          db.query(
-            "INSERT INTO usuarios (nombre, email, contraseña, rol) VALUES (?, ?, ?, ?)",
-            [nombre, email, hashedPassword, rol],
-            (error, resultado) => {
-              if (error) {
-                return res
-                  .status(500)
-                  .send("Error interno del servidor al guardar datos");
-              }
-              res.redirect("/inicio-sesion");
-            }
-          );
-        }
+    db.query("SELECT * FROM usuarios WHERE email = ? OR nombre = ?", [email, nombre], (error, resultados) => {
+      if (error) {
+        console.error('Error en la consulta a la base de datos:', error);
+        return res.status(500).send("Error interno del servidor");
       }
-    );
+
+      if (resultados.length > 0) {
+        return res.status(400).send(
+          `<script>
+            alert("El correo electrónico o el nombre de usuario ya están en uso");
+            window.location.href = "/registro";
+          </script>`
+        );
+      }
+
+      db.query("INSERT INTO usuarios (nombre, email, contraseña, rol) VALUES (?, ?, ?, ?)", [nombre, email, hashedPassword, rol], (error, resultado) => {
+        if (error) {
+          console.error('Error al insertar en la base de datos:', error);
+          return res.status(500).send("Error interno del servidor al guardar datos");
+        }
+        res.redirect("/inicio-sesion");
+      });
+    });
   } catch (error) {
-    console.error("Error al hashear la contraseña:", error);
-    res.status(500).send("Error interno del servidor al hashear la contraseña");
+    console.error('Error en la ruta de registro:', error);
+    res.status(500).send("Error interno del servidor");
   }
 });
 
