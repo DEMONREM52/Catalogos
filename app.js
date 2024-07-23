@@ -348,7 +348,7 @@ app.post("/registro", async (req, res) => {
       }
     }
 
-    if (!aceptarTerminos) {
+    if (aceptarTerminos !== 'true') {
       return res.status(400).send(
         `<script>
           alert("Debe aceptar los términos y condiciones para registrarse");
