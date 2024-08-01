@@ -577,7 +577,7 @@ background: linear-gradient(125deg, rgba(165,0,254,1) 0%, rgba(209,0,255,1) 100%
                                                             </p>
                                                             <b>
                                                                 <p class="card-text">
-                                                                    Precio: $<%= catalogo.precio.toLocaleString('es-CO')
+                                                                    Precio: $<%= catalogo.precio.toFixed(0).toLocaleString('es-CO') %> COP
                                                                         %> COP</p>
                                                             </b>
                                                             <p class="card-text">Agregado por: <b>
@@ -619,10 +619,8 @@ background: linear-gradient(125deg, rgba(165,0,254,1) 0%, rgba(209,0,255,1) 100%
                                                                                 </p>
                                                                                 <b>
                                                                                     <p class="card-text">
-                                                                                        Precio: $<%=
-                                                                                            catalogo.precio.toLocaleString('es-CO')
-                                                                                            %>
-                                                                                            COP</p>
+                                                                                        Precio: $<%= catalogo.precio.toFixed(0).toLocaleString('es-CO') %> COP
+                                                                                    </p>
                                                                                 </b>
                                                                                 <div class="d-flex align-items-center">
                                                                                     <a href="/editar-catalogo/<%= catalogo.id %>"
@@ -674,9 +672,7 @@ background: linear-gradient(125deg, rgba(165,0,254,1) 0%, rgba(209,0,255,1) 100%
                                                                             <%= catalogo.descripcion %>
                                                                                 <b>
                                                                                     <p class="card-text">
-                                                                                        Precio: $<%=
-                                                                                            catalogo.precio.toLocaleString('es-CO')
-                                                                                            %>
+                                                                                        Precio: $<%= catalogo.precio.toFixed(0).toLocaleString('es-CO') %> COP
                                                                                             COP</p>
                                                                                 </b>
                                                                                 <div class="d-flex align-items-center">
