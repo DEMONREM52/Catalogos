@@ -460,7 +460,7 @@ background: linear-gradient(125deg, rgba(255, 0, 109, 1) 0%, rgba(255, 0, 109, 1
                                 </b>
                                 <p class="card-text"
                                     style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; font-size: 30px;">
-                                    Precio: $<%= catalogo.precio.toFixed(0).toLocaleString('es-CO') %> COP</p>
+                                    Precio: $<%= catalogo.precio.toLocaleString('es-CO') %> COP</p>
                                 <form class="agregar-al-carrito" action="/agregar-al-carrito" method="POST">
                                     <!-- Campos ocultos para el ID, nombre y precio del producto -->
                                     <input type="hidden" name="productoId" value="<%= catalogo.id %>">
@@ -675,7 +675,7 @@ function calcularTotal() {
 
     // Formatea el total para mostrarlo completo
     const totalCarritoElement = document.getElementById('total-carrito');
-    totalCarritoElement.textContent = `Total a pagar: ${totalCarrito.toFixed(0).toLocaleString('es-CO', { style: 'currency', currency: 'COP', minimumFractionDigits: 0 })}`;
+    totalCarritoElement.textContent = `Total a pagar: ${totalCarrito.toLocaleString('es-CO', { style: 'currency', currency: 'COP', minimumFractionDigits: 0 })}`;
     totalCarritoElement.style.display = 'block'; // Muestra el elemento
 }
 
@@ -702,7 +702,7 @@ function agregarAlCarrito(productoId, nombreProducto, precioProducto, cantidad) 
 
     const itemCarrito = `
         <li data-producto-id="${productoId}">
-            ${nombreProducto} - Precio: <span class="precio">${precioProducto.toFixed(0).toLocaleString('es-CO', { style: 'currency', currency: 'COP', minimumFractionDigits: 0 })}</span> - Cantidad: <input type="number" class="cantidad" style="width: 7ch;" value="${cantidad}" min="1" onchange="actualizarCantidad(${productoId}, ${precioProducto})"> - Total: <span class="total">${totalProducto.toFixed(0).toLocaleString('es-CO', { style: 'currency', currency: 'COP', minimumFractionDigits: 0 })}</span>
+            ${nombreProducto} - Precio: <span class="precio">${precioProducto.toLocaleString('es-CO', { style: 'currency', currency: 'COP', minimumFractionDigits: 0 })}</span> - Cantidad: <input type="number" class="cantidad" style="width: 7ch;" value="${cantidad}" min="1" onchange="actualizarCantidad(${productoId}, ${precioProducto})"> - Total: <span class="total">${totalProducto.toLocaleString('es-CO', { style: 'currency', currency: 'COP', minimumFractionDigits: 0 })}</span>
             <button class="boton-eliminar-lista" onclick="eliminarDelCarrito(${productoId}, ${precioProducto}, ${cantidad})">Eliminar</button>
         </li>
     `;
@@ -723,7 +723,7 @@ function actualizarCantidad(productoId, precioProducto) {
         totalCarrito += nuevoTotal; // Sumar el nuevo total del producto al carrito
         totalGeneral -= totalAnterior; // Restar el total general del producto anterior
         totalGeneral += nuevoTotal; // Sumar el nuevo total del producto al total general
-        cantidadElement.parentElement.querySelector('.total').textContent = nuevoTotal.toFixed(0).toLocaleString('es-CO', { style: 'currency', currency: 'COP', minimumFractionDigits: 0 }); // Actualizar el total del producto
+        cantidadElement.parentElement.querySelector('.total').textContent = nuevoTotal.toLocaleString('es-CO', { style: 'currency', currency: 'COP', minimumFractionDigits: 0 }); // Actualizar el total del producto
         calcularTotal(); // Calcular y mostrar el total del carrito
         actualizarTotalGeneral(); // Actualizar el total general mostrado
     }
@@ -740,7 +740,7 @@ function actualizarCantidad(productoId, precioProducto) {
     // Función para actualizar el total general mostrado
     function actualizarTotalGeneral() {
         const totalGeneralElement = document.getElementById('total-general');
-        totalGeneralElement.textContent = `Total general: $${totalGeneral.toFixed(0).toLocaleString('es-CO', { style: 'currency', currency: 'COP', minimumFractionDigits: 0 })}`;
+        totalGeneralElement.textContent = `Total general: $${totalGeneral.toLocaleString('es-CO', { style: 'currency', currency: 'COP', minimumFractionDigits: 0 })}`;
     }
 
 // Función para eliminar un producto del carrito

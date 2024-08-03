@@ -445,7 +445,7 @@ background: linear-gradient(125deg, #00bf97 0%, #00bf97 100%, #00bf97 100%);    
                                 </p>
                                 <p class="card-text"
                                     style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; font-size: 40px;">
-                                    Precio: $<%= catalogo.precio.toFixed(0).toLocaleString('es-CO') %> COP</p>
+                                    Precio: $<%= catalogo.precio.toLocaleString('es-CO') %> COP</p>
                                     <form class="agregar-al-carrito" action="/agregar-al-carrito" method="POST">
                                         <!-- Campos ocultos para el ID, nombre y precio del producto -->
                                         <input type="hidden" name="productoId" value="<%= catalogo.id %>">
